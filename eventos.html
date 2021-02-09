@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>Eventos UL</title> 
+        <meta charset="utf-8"/>
+        <link href="trabajo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <script src="js/bootstrap.js"></script>
+        <script src="eventos.js"></script>
+    </head>
+    <body class="container">
+        <!--Modal carrito-->
+        <div class="modal fade" id="ModalCarrito" tabindex="-1" aria-labelledby="ModalCarritoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="ModalCarritoLabel">Eventos a adquirir</h6>
+                    </div>
+                    <div class="modal-body">
+                        <table class="default">
+                            <tr class="celda">
+                                <th>Evento</th>
+                                <th>Cantidad</th>
+                                <th>Monto</th>                                
+                            </tr>
+                            <tr class="celda">
+                                <td>Evento 4</td>
+                                <td>3</td>
+                                <td>S/.20</td>
+                            </tr>
+                            <tr class="celda">
+                                <td>Evento 5</td>
+                                <td>2</td>
+                                <td>S/.15</td>
+                            </tr>
+                            <tr>
+                                <td id="celdaTotal" colspan="3">Total a pagar: S/.35</td>
+                            </tr>
+                            <tr>
+                                <td id="celdaPagar" colspan="3">
+                                    <button type="button" class="btn btn-light" id="butPagar" data-bs-dismiss="modal">Pagar</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+        <!---->
+
+        <div  id="cabecera" class="row">
+            <div class="col-10">
+                <h3>Eventos ULIMA</h3>
+            </div>
+            <div class="col-1">
+                <a class="link" data-bs-toggle="modal" data-bs-target="#ModalCarrito"><img id="carrito"  src="imagenes/carrito.png">(0)</a>
+            </div>
+            <div class="col-1" id="login">
+                <a class="link" href="trabajo.html">Logout</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <input class="form-control" placeholder="Dia" type="date">
+                </div>
+                <div>
+                    <select id="tipo" class="form-select">
+                        <option>-------------- Tipo --------------</option>
+                    </select>                    
+                </div>
+                <div>
+                    <select id="categoria" class="form-select">
+                        <option>----------- Categoría -----------</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-light" id="butFiltrar">Filtrar</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-3">
+                            <div>
+                                <h6 class="info">Evento 1</h6>                                
+                            </div>
+                            <div>
+                                <h6>S/.20</h6>                                
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary">+</button>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <img src="https://i.pinimg.com/originals/13/a1/01/13a10172127bbf9da50b8ce6db35eeaa.png" class="card-img-top">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-3">
+                            <div>
+                                <h6 class="info">Evento 4</h6>                                
+                            </div>
+                            <div>
+                                <h6>S/.20</h6>                                
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary">+</button>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <img src="https://images.alphacoders.com/968/thumb-1920-968253.jpg" class="card-img-top">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-3">
+                            <div>
+                                <h6 class="info">Evento 2</h6>                                
+                            </div>
+                            <div>
+                                <h6>S/.20</h6>                                
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary">+</button>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <img src="https://images8.alphacoders.com/691/thumb-1920-691314.png" class="card-img-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+
+        <div class="card" id="footer"> 
+            <div class="card-body">
+                <div>
+                    Universidad de Lima
+                </div>
+                <div>
+                    20132742 | 20151102 | 20172099 | 20172236
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
