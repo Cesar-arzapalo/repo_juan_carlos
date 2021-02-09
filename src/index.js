@@ -1,4 +1,4 @@
-import http  from "./src/peticionesHttp/https"
+const http =requie("./src/peticionesHttp/https");
 
 var listaBanner;
 var listaOfertas;
@@ -130,11 +130,10 @@ var main = () => {
 }
 
 
-window.addEventListener("load", main);
-async function login (username,password) {
+var loginn = async(username,password) => {
     var resp = await http(URL_BASE,"login","POST","token",TOKEN,"username",username,"pasword",password);
     console.log(resp);
-
+    
 };
 
 var registrar = async(username,password) => {
@@ -143,4 +142,6 @@ var registrar = async(username,password) => {
 };
 
 console.log(5);
-login("abc@gmail.com","12435");
+loginn("abc@gmail.com","12435");
+
+window.addEventListener("load", main);
