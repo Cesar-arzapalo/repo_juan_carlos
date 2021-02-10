@@ -4,11 +4,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eventos UL</title>
+    <link href="style.css" rel="stylesheet" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
     
 </head>
-<body>
-    <button onclick="login(1,1)">dar click</button>
-    <script src="index.js" ></script>
+<body style="background-color:#f7d7cd;" class="container">
+    <!-- <audio src="imagenes/Las quintillizas.mp3" loop="3" autoplay="true"></audio> -->
+    <!--Modal Login-->
+    <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLoginLabel">Login</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <input class="form-control" placeholder="Ingresa tu email" id="username" />
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Ingresa tu password" id="password" />
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-light" id="butGuardar"
+                            onclick="login(document.getElementById('username').value,document.getElementById('password').value)">Guardar</button>
+                    </div>
+                    <div>
+                        <a class="link" data-bs-toggle="modal" data-bs-target="#ModalRegistro" data-bs-dismiss="modal"
+                            id="butRegistrate">Regístrate!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+    <!--Modal Registrate-->
+    <div class="modal fade" id="ModalRegistro" tabindex="-1" aria-labelledby="ModalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalRegistroLabel">Regístrate!!</h5>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <input class="form-control" placeholder="Ingresa tu email" id="registerUsername">
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Ingresa tu password"
+                            id="registerPassword">
+                    </div>
+                    <div>
+                        <select id="pais" class="form-select">
+                            <option>Ingresa tu país</option>
+                        </select>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            ¿Deseas ser organizador?
+                        </label>
+                    </div>
+                    <div>
+                        <button data-bs-toggle="modal" data-bs-target="#ModalLogin" data-bs-dismiss="modal"
+                            type="button" class="btn btn-light" id="butGuardar"
+                            onclick="registrar(document.getElementById('registerUsername').value,document.getElementById('registerPassword').value)">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+    <div id="cabecera" class="row">
+        <div class="col-10">
+            <h3>Eventos ULIMA</h3>
+        </div>
+        <div class="col-1">
+            <a class="link" data-bs-toggle="modal" data-bs-target="#ModalLogin"><img class="carrito" id="carrito"
+                    src="imagenes/carrito.png"> </i>(0)</a>
+        </div>
+        <div class="col-1" id="login">
+            <a class="link" data-bs-toggle="modal" data-bs-target="#ModalLogin">Login</a>
+        </div>
+    </div>
+    <div class="row">
+        <img id="banner" src="imagenes/Nino.jpg" class="img-fluid">
+        <!--<img src="https://i.pinimg.com/originals/13/a1/01/13a10172127bbf9da50b8ce6db35eeaa.png" class="img-fluid">-->
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class=oferta>
+                <img id="imgdes10" src="https://bucket-tue.obs.la-south-2.myhuaweicloud.com/600a224632b0d.jpg"
+                    class="img-fluid">
+                <div id="divdes10">Descuenta 10%</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class=oferta>
+                <img id="img2x1" src="https://bucket-tue.obs.la-south-2.myhuaweicloud.com/6011d289a640c.jpg"
+                    class="img-fluid">
+                <div id="div2x1">2x1 solo los jueves</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class=oferta>
+                <img id="imgdes20" src="https://bucket-tue.obs.la-south-2.myhuaweicloud.com/6007394788d33.jpg"
+                    class="img-fluid">
+                <div id="divdes20">Descuenta 20%</div>
+            </div>
+
+        </div>
+    </div>
+    <div style="background-color:#f3c8bb;" class="card" id="footer">
+        <div class="card-body">
+            <div>
+                Universidad de Lima
+            </div>
+            <div>
+                20132742 | 20151102 | 20172099 | 20172236
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>

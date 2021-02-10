@@ -35,6 +35,7 @@ var login =  async(username,password) => {
 };
 
 var registrar = async(username,password) => {
+    console.log(username,password);
     var resp = await http(URL_BASE,"registrar","POST","token",TOKEN,"username",username,"pasword",password);
     console.log(resp);
 };
